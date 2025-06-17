@@ -38,10 +38,8 @@ def load_and_fix_csv(path: Path, sep: str = ";") -> pd.DataFrame:
 
 if __name__ == "__main__":
     df = load_and_fix_csv(CSV_PATH)
-    
-    # print(df.info())
-    # print(df.head(5))
-    # df.to_csv(Path(BASE_DIR / "base_vendas_clean.csv"), index=False)
 
-    sorted_vals = np.sort(df["PRODUTO_ID"].unique())
-    print(sorted_vals)
+    print(df.info())
+    print(df.head(5))
+    
+    df.to_csv(Path(BASE_DIR / "base_vendas_clean.csv"), index=False)
